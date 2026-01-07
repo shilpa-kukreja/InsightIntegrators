@@ -4,6 +4,9 @@ import { Phone, CheckCircle, Star, Users, Award, Clock, Shield, Calendar, Messag
 import { motion } from "framer-motion";
 import { useState } from "react";
 import ContactPopup from "./ContactPopup";
+import axios from "axios";
+
+
 
 
 export default function HeroBanner() {
@@ -14,53 +17,50 @@ export default function HeroBanner() {
         phone: "",
         serviceType: ""
     });
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const GOOGLE_SHEET_URL =
-        "https://script.google.com/macros/s/AKfycbxkUXfTtsOheJyRYMyr2bSGpyookpNRv_46NcLCkubNWJwKQ-XkwvFEEwRBYBeIEArj/exec";
+        "https://script.google.com/macros/s/AKfycbycC_dHrLGFYzldh9FBiIgcVWYkEkEH618Qh4yJn55pUUYoMY-fOA3aE_AHMoWYKhdw/exec";
 
 
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsLoading(true);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsLoading(true);
 
-        try {
-            const response = await fetch(GOOGLE_SHEET_URL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            });
+  try {
+    await fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
 
-            const result = await response.json();
+    setIsSubmitted(true);
 
-            if (result.success) {
-                setIsSubmitted(true);
+    setFormData({
+      fullName: "",
+      companyName: "",
+      email: "",
+      phone: "",
+      serviceType: "",
+    });
 
-                setFormData({
-                    fullName: "",
-                    companyName: "",
-                    email: "",
-                    phone: "",
-                    serviceType: ""
-                });
+    setTimeout(() => setIsSubmitted(false), 3000);
+  } catch (error) {
+    console.error("Fetch Error:", error);
+    alert("Something went wrong. Please try again later.");
+  } finally {
+    setIsLoading(false);
+  }
+};
 
-                setTimeout(() => setIsSubmitted(false), 3000);
-            } else {
-                alert("Submission failed");
-            }
-        } catch (error) {
-            console.error(error);
-            alert("Error submitting form");
-        } finally {
-            setIsLoading(false);
-        }
-    };
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -81,13 +81,14 @@ export default function HeroBanner() {
     ];
 
     return (
-        <section className="relative min-h-screen flex items-center overflow-hidden">
+        <section className="relative min-h-screen flex  items-center overflow-hidden">
             {/* Background Image with Overlay */}
             <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                className="absolute inset-0 bg-cover    bg-center bg-no-repeat"
                 style={{
-                    backgroundImage: "url('/image/new_service_banner.webp')",
-                    backgroundAttachment: 'fixed'
+                    backgroundImage: "url('/image/01.png')",
+                    backgroundAttachment: 'sticky',
+                    backgroundPosition: 'top'
                 }}
             >
                 {/* Dark Overlay for better text visibility */}
@@ -98,20 +99,20 @@ export default function HeroBanner() {
             </div>
 
             {/* Content */}
-            <div className="relative w-full">
+            <div className="relative w-full ">
                 <div className="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
                     <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
 
                         {/* Left Content - 7 columns */}
-                       
 
-        
 
-        {/* Right Side - Content */}
-        <div className="lg:col-span-7 space-y-8">
 
-          {/* Premium Badge */}
-          {/* <motion.div
+
+                        {/* Right Side - Content */}
+                        <div className="lg:col-span-7 space-y-8">
+
+                            {/* Premium Badge */}
+                            {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -126,63 +127,63 @@ export default function HeroBanner() {
             </div>
           </motion.div> */}
 
-          {/* Primary Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl  font-bold text-gray-900 leading-tight tracking-tight"
-          >
-            Protect Your Business from{" "}
-            <span className="text-[#4f2e80]">Regulatory Risk, Penalties & Compliance Failures</span>
-          </motion.h1>
+                            {/* Primary Headline */}
+                            {/* <motion.h1
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
+                                className="text-4xl md:text-5xl  font-bold text-gray-900 leading-tight tracking-tight"
+                            >
+                                Protect Your Business from{" "}
+                                <span className="text-white">Regulatory Risk, Penalties & Compliance Failures</span>
+                            </motion.h1> */}
 
-          {/* Sub-Headline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-4 text-lg text-gray-700 max-w-3xl text-justify leading-relaxed"
-          >
-            Expert Internal Audit, AML, Tax & Corporate Governance Advisory for UAE, DIFC & ADGM Businesses.
-          </motion.p>
+                            {/* Sub-Headline */}
+                            {/* <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                className="mt-4 text-lg text-white max-w-3xl text-justify leading-relaxed"
+                            >
+                                Expert Internal Audit, AML, Tax & Corporate Governance Advisory for UAE, DIFC & ADGM Businesses.
+                            </motion.p> */}
 
-          {/* Trust Line */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-4 text-md text-gray-800 font-medium"
-          >
-            ✔ UAE Regulatory Expertise | ✔ Regulator-Ready Frameworks | ✔ Senior-Led Engagements
-          </motion.p>
+                            {/* Trust Line */}
+                            {/* <motion.p
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                className="mt-4 text-md text-white font-medium"
+                            >
+                                ✔ UAE Regulatory Expertise | ✔ Regulator-Ready Frameworks | ✔ Senior-Led Engagements
+                            </motion.p> */}
 
-          {/* Features Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6"
-          >
-            {[
-              "Internal Audit & Risk Assurance",
-              "AML & Regulatory Compliance Advisory",
-              "Corporate Governance & Board Advisory",
-              "UAE Corporate Tax & VAT Services",
-              "ESR & Regulatory Reporting Support",
-              "DIFC & ADGM Compliance Services"
-            ].map((feature, index) => (
-              <div key={index} className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5  backdrop-blur-sm border border-[#4f2e80] flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-black" />
-                </div>
-                <span className="text-md font-medium text-gray-800">{feature}</span>
-              </div>
-            ))}
-          </motion.div>
+                            {/* Features Grid */}
+                            {/* <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                                className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6"
+                            >
+                                {[
+                                    "Internal Audit & Risk Assurance",
+                                    "AML & Regulatory Compliance Advisory",
+                                    "Corporate Governance & Board Advisory",
+                                    "UAE Corporate Tax & VAT Services",
+                                    "ESR & Regulatory Reporting Support",
+                                    "DIFC & ADGM Compliance Services"
+                                ].map((feature, index) => (
+                                    <div key={index} className="flex items-center gap-4">
+                                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5  backdrop-blur-sm border border-[#4f2e80] flex items-center justify-center">
+                                            <CheckCircle className="w-5 h-5 text-white" />
+                                        </div>
+                                        <span className="text-md font-medium text-white">{feature}</span>
+                                    </div>
+                                ))}
+                            </motion.div> */}
 
-          {/* Stats Grid */}
-          {/* <motion.div
+                            {/* Stats Grid */}
+                            {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -234,27 +235,27 @@ export default function HeroBanner() {
             </div>
           </motion.div> */}
 
-          {/* CTA Buttons */}
-         <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
-        className="mt-12 flex flex-col sm:flex-row gap-6"
-      >
-        <button
-          onClick={() => setIsPopupOpen(true)}
-          className="group relative overflow-hidden inline-flex items-center justify-center gap-3 bg-[#4f2e80] hover:bg-[#5a32a1] transition-all duration-500 px-10 py-5 rounded-2xl font-semibold text-white shadow-2xl shadow-blue-900/50 hover:shadow-3xl hover:shadow-blue-900/60"
-        >
-          <div className="absolute inset-0 bg-[#4f2e80] translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-          <span className="relative z-10 text-md">Get a Free Compliance Risk Assessment</span>
-        </button>
-      </motion.div>
+                            {/* CTA Buttons */}
+                            {/* <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.6 }}
+                                className="mt-12 flex flex-col sm:flex-row gap-6"
+                            >
+                                <button
+                                    onClick={() => setIsPopupOpen(true)}
+                                    className="group relative overflow-hidden inline-flex items-center cursor-pointer justify-center gap-3 bg-white hover:bg-white transition-all duration-500 px-10 py-5 rounded-2xl font-semibold text-white shadow-2xl shadow-blue-900/50 hover:shadow-3xl hover:shadow-blue-900/60"
+                                >
+                                    <div className="absolute inset-0 bg-white translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                                    <span className="relative z-10 text-md text-[#4f2e80]">Get a Free Compliance Risk Assessment</span>
+                                </button>
+                            </motion.div> */}
 
-      {/* Contact Popup */}
-      {isPopupOpen && <ContactPopup onClose={() => setIsPopupOpen(false)} />}
+                            {/* Contact Popup */}
+                            {isPopupOpen && <ContactPopup onClose={() => setIsPopupOpen(false)} />}
 
-        </div>
-      
+                        </div>
+
 
                         {/* Right Contact Form - 5 columns */}
                         <motion.div

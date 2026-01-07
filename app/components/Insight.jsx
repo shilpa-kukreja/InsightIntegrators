@@ -75,7 +75,7 @@ export default function TrustSection() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/image/cs1.jpg" // replace with your image
+                src="/image/05.png" // replace with your image
                 alt="Trusted Regulatory & Compliance Advisory in UAE"
                 width={650}
                 height={700}

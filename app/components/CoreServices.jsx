@@ -27,7 +27,7 @@ export default function CoreServicesSection() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/image/cs2.jpg" // replace with your image
+                src="/image/04.png" // replace with your image
                 alt="Professional Compliance & Advisory Services"
                 width={600}
                 height={700}

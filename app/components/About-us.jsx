@@ -32,7 +32,7 @@ function AboutUs() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <div className="aspect-[3/4] w-full relative">
                   <img
-                    src="/image/man-with-papers.jpg"
+                    src="/image/03.png"
                     alt="Senior Compliance & Audit Professionals"
                     className="w-full h-full object-cover"
                   />

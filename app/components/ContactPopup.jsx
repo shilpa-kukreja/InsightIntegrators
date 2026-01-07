@@ -47,48 +47,46 @@ export default function ContactPopup({ onClose }) {
     }));
   };
 
-const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxkUXfTtsOheJyRYMyr2bSGpyookpNRv_46NcLCkubNWJwKQ-XkwvFEEwRBYBeIEArj/exec";
+const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbycC_dHrLGFYzldh9FBiIgcVWYkEkEH618Qh4yJn55pUUYoMY-fOA3aE_AHMoWYKhdw/exec";
 
 const handleSubmit = async (e) => {
   e.preventDefault();
   setIsLoading(true);
 
   try {
-    const response = await fetch(GOOGLE_SHEET_URL, {
+    await fetch(GOOGLE_SHEET_URL, {
       method: "POST",
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(formData)
     });
 
-    const result = await response.json();
+    setIsSubmitted(true);
 
-    if (result.success) {
-      setIsSubmitted(true);
+    setTimeout(() => {
+      setFormData({
+        fullName: "",
+        companyName: "",
+        email: "",
+        phone: "",
+        serviceType: "",
+        message: ""
+      });
+      setIsSubmitted(false);
+      onClose();
+    }, 3000);
 
-      setTimeout(() => {
-        setFormData({
-          fullName: "",
-          companyName: "",
-          email: "",
-          phone: "",
-          serviceType: "",
-          message: ""
-        });
-        setIsSubmitted(false);
-        onClose();
-      }, 3000);
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
   } catch (error) {
-    console.error(error);
-    alert("Submission failed");
+    console.error("Fetch error:", error);
+    alert("Something went wrong");
   } finally {
     setIsLoading(false);
   }
 };
+
+
 
 
   return (
