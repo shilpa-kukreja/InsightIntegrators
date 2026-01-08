@@ -162,10 +162,10 @@ export default function Header() {
               </div> */}
 
               <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <Phone size={14} className="text-[#4f2e80]" />
                 <span className="font-medium">{contactInfo.phone}</span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#4f2e80]" />
                 <span>{contactInfo.email}</span>

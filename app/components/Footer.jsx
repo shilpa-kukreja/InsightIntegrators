@@ -51,10 +51,10 @@ export default function Footer({ onOpenPopup }) {
               className={`mt-4 space-y-3 text-sm
                 ${openContact ? "block" : "hidden"} md:block`}
             >
-              <li className="flex items-center gap-3">
+              {/* <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#4f2e80]" />
                 +971 56 834 0225
-              </li>
+              </li> */}
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#4f2e80]" />
                 lakeshgrover@gmail.com
