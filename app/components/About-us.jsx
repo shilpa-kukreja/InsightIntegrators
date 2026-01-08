@@ -104,7 +104,7 @@ function AboutUs() {
               </p>
 
               <p className="text-lg text-gray-700 text-justify leading-relaxed">
-                Engagements are personally led by Lakesh Grover, Founder & Principal
+                Engagements are personally led by our Chief Compliance Officer, Founder & Principal
                 Consultant, bringing over 15 years of hands-on experience across
                 highly regulated industries.
               </p>
