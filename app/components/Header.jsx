@@ -26,10 +26,10 @@ export default function Header() {
     { title: "Advisory Services", items: ["Business Advisory", "Tax Planning", "Financial Consulting", "Legal Services"] }
   ];
 
-  const contactInfo = {
-    phone: "+971 56 834 0225",
-    // email: "lakeshgrover@gmail.com",
-  };
+  // const contactInfo = {
+  //   phone: "+971 56 834 0225",
+  //   // email: "lakeshgrover@gmail.com",
+  // };
 
   return (
     <>
@@ -269,14 +269,14 @@ export default function Header() {
                       
                       {/* Mobile Contact Info */}
                       <div className="mt-6 space-y-3 text-sm text-gray-600">
-                        <div className="flex items-center gap-2">
+                        {/* <div className="flex items-center gap-2">
                           <Phone size={14} className="text-[#4f2e80]" />
                           <span>{contactInfo.phone}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Mail size={14} className="text-[#4f2e80]" />
                           <span>{contactInfo.email}</span>
-                        </div>
+                        </div> */}
                         {/* <div className="flex items-center gap-2">
                           <MapPin size={14} className="text-blue-600" />
                           <span>{contactInfo.address}</span>
