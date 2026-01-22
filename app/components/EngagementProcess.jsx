@@ -16,9 +16,9 @@ export default function EngagementProcessSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="inline-block text-sm font-semibold text-[#4f2e80] uppercase tracking-wide mb-4">
+          {/* <span className="inline-block text-sm font-semibold text-[#4f2e80] uppercase tracking-wide mb-4">
             Our Engagement Approach
-          </span>
+          </span> */}
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
             A Clear, Structured Path to Compliance

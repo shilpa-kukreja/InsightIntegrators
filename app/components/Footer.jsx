@@ -55,10 +55,10 @@ export default function Footer({ onOpenPopup }) {
                 <Phone className="w-4 h-4 text-[#4f2e80]" />
                 +971 56 834 0225
               </li> */}
-              <li className="flex items-center gap-3">
+              {/* <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#4f2e80]" />
                 lakeshgrover@gmail.com
-              </li>
+              </li> */}
               <li className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-[#4f2e80]" />
                 United Arab Emirates
@@ -98,7 +98,7 @@ export default function Footer({ onOpenPopup }) {
               Free Strategy Consultation
             </h4>
             <p className="text-sm text-gray-300">
-              Schedule a confidential discussion with our senior advisory team.
+              Schedule a free  consultation with our senior advisory team.
             </p>
             <button
               onClick={onOpenPopup}
@@ -124,7 +124,7 @@ export default function Footer({ onOpenPopup }) {
 
         {/* CALL BUTTON */}
         <a
-          href="tel:+971 56 834 0225"
+          href="tel:+971526806400"
           aria-label="Call Us"
           className="group relative flex h-14 w-14 items-center justify-center rounded-full 
     bg-[#1b3163] shadow-[0_12px_30px_rgba(27,49,99,0.35)]
@@ -140,7 +140,7 @@ export default function Footer({ onOpenPopup }) {
 
         {/* WHATSAPP BUTTON */}
         <a
-          href="https://wa.me/971568340225?text=Hello%20Insight%20Integrators,%20I%20would%20like%20to%20discuss%20compliance%20advisory."
+          href="https://wa.me/971526806400?text=Hello%20Insight%20Integrators,%20I%20would%20like%20to%20discuss%20compliance%20advisory."
           aria-label="WhatsApp"
           className="group relative flex h-14 w-14 items-center justify-center rounded-full 
     bg-[#25d366] shadow-[0_12px_30px_rgba(37,211,102,0.35)]

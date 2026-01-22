@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import {
   CheckCircle,
   ShieldCheck,
@@ -9,9 +10,16 @@ import {
   Building2,
   FileText,
   Landmark,
+  ChevronDown,
 } from "lucide-react";
 
 export default function CoreServicesSection() {
+  const [open, setOpen] = useState("advisory");
+
+  const toggle = (type) => {
+    setOpen(open === type ? null : type);
+  };
+
   return (
     <section className="bg-gray-200 sm:py-24 py-12">
       <div className="max-w-7xl mx-auto px-6">
@@ -25,24 +33,14 @@ export default function CoreServicesSection() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <div className="rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/image/04.png" // replace with your image
-                alt="Professional Compliance & Advisory Services"
+                src="/image/04.png"
+                alt="Professional Services"
                 width={600}
                 height={700}
                 className="object-cover w-full h-full"
               />
-            </div>
-
-            {/* Accent Card */}
-            <div className="absolute -bottom-8 -right-8 bg-[#4f2e80] text-white px-6 py-4 rounded-xl shadow-xl hidden md:block">
-              <p className="text-sm uppercase tracking-wide opacity-80">
-                Trusted Advisory
-              </p>
-              <p className="text-xl font-semibold">
-                Compliance • Risk • Governance
-              </p>
             </div>
           </motion.div>
 
@@ -53,71 +51,94 @@ export default function CoreServicesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-block text-sm font-semibold text-[#4f2e80] uppercase tracking-wide mb-4">
-              Core Services Snapshot
-            </span>
-
-            <h2 className="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-6">
               Our Key Services
             </h2>
 
-            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-              We deliver structured, regulator-aligned advisory solutions designed
-              for decision-makers who require clarity, confidence, and compliance
-              assurance.
+            <p className="text-lg text-gray-600 mb-10">
+              Choose a category to explore our advisory and consulting expertise.
             </p>
 
-            {/* Services List */}
-            <div className="space-y-5">
-              <ServiceItem
-                icon={<FileText />}
-                text="Internal Audit & Risk-Based Reviews"
-              />
-              <ServiceItem
-                icon={<ShieldCheck />}
-                text="AML & Compliance Advisory"
-              />
-              <ServiceItem
-                icon={<Building2 />}
-                text="Corporate Governance & Board Advisory"
-              />
-              <ServiceItem
-                icon={<Scale />}
-                text="VAT & Corporate Tax Compliance"
-              />
-              <ServiceItem
-                icon={<CheckCircle />}
-                text="ESR Advisory & Reporting"
-              />
-              <ServiceItem
-                icon={<Landmark />}
-                text="DIFC & ADGM Regulatory Support"
-              />
-            </div>
-          </motion.div>
+            {/* Advisory Section */}
+            <Dropdown
+              title="Advisory Services"
+              isOpen={open === "advisory"}
+              onClick={() => toggle("advisory")}
+            >
+              <ServiceItem icon={<FileText />} text="Business Risk and Control Service" />
+              <ServiceItem icon={<ShieldCheck />} text="Regulatory Compliance Service" />
+              <ServiceItem icon={<Building2 />} text="AML and Financial Crime Service" />
+              <ServiceItem icon={<Landmark />} text="Specialised Services for DIFC and ADGM entities" />
+              <ServiceItem icon={<CheckCircle />} text="Forensic and Investigative Services" />
+            </Dropdown>
 
+            {/* Consulting Section */}
+            <Dropdown
+              title="Consulting Services"
+              isOpen={open === "consulting"}
+              onClick={() => toggle("consulting")}
+            >
+              <ServiceItem icon={<Scale />} text="Business Transformation" />
+              
+            </Dropdown>
+
+              <Dropdown
+              title="Financial Advisory Services"
+              isOpen={open === "financial"}
+              onClick={() => toggle("financial")}
+            >
+              <ServiceItem icon={<Scale />} text="Business Valuations " />
+              <ServiceItem icon={<CheckCircle />} text="Business Set Up and Licensing Service" />
+            </Dropdown>
+
+          </motion.div>
         </div>
       </div>
     </section>
   );
 }
 
+/* Dropdown Wrapper */
+function Dropdown({ title, isOpen, onClick, children }) {
+  return (
+    <div className="mb-6">
+      <button
+        onClick={onClick}
+        className="w-full flex items-center justify-between bg-[#4f2e80] text-white px-6 py-4 rounded-xl font-semibold text-lg"
+      >
+        {title}
+        <ChevronDown
+          className={`transition-transform duration-300 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="overflow-hidden mt-4 space-y-4"
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 /* Service Item */
 function ServiceItem({ icon, text }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
-      className="flex items-center gap-4 bg-gray-50 border border-[#4f2e80] rounded-xl px-6 py-4 hover:bg-white hover:shadow-sm transition"
-    >
-      <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-blue-100 text-[#4f2e80]">
+    <div className="flex items-center gap-4 bg-white border border-[#4f2e80]/30 rounded-xl px-6 py-4 hover:shadow-md transition">
+      <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-blue-100 text-[#4f2e80]">
         {icon}
       </div>
-      <p className="text-lg font-medium text-gray-800">
-        {text}
-      </p>
-    </motion.div>
+      <p className="text-gray-800 font-medium">{text}</p>
+    </div>
   );
 }

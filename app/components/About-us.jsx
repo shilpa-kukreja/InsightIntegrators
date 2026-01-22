@@ -41,9 +41,9 @@ function AboutUs() {
               </div>
 
               {/* Trust Badge */}
-              <div className="absolute -top-3 -left-3 bg-[#4f2e80] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+              {/* <div className="absolute -top-3 -left-3 bg-[#4f2e80] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                 15+ Years Regulatory Experience
-              </div>
+              </div> */}
             </div>
           </motion.div>
 
@@ -52,7 +52,7 @@ function AboutUs() {
 
             {/* Section Header */}
             <div className="space-y-4">
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -62,7 +62,7 @@ function AboutUs() {
                 <span className="text-[#4f2e80] font-semibold text-sm uppercase tracking-wider">
                   Authority & Credibility
                 </span>
-              </motion.div>
+              </motion.div> */}
 
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ function AboutUs() {
                 className="text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
               >
                 Led by Experienced{" "}
-                <span className="text-transparent bg-clip-text bg-[#4f2e80]">
+                <span className="text-[#4f2e80]">
                   Compliance & Audit Professionals
                 </span>
               </motion.h2>
@@ -99,8 +99,8 @@ function AboutUs() {
             >
               <p className="text-lg text-gray-700 text-justify leading-relaxed">
                 Our firm is led by senior compliance and audit professionals with
-                deep experience across internal audit, AML, corporate governance,
-                and regulatory compliance.
+                deep experience across Internal audit, AML, Corporate governance,
+                and Regulatory compliance.
               </p>
 
               <p className="text-lg text-gray-700 text-justify leading-relaxed">

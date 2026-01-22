@@ -20,10 +20,10 @@ export default function LeadMagnetSection({ onOpenPopup }) {
           className="bg-white border-2 border-gray-400 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-14 text-center shadow-lg"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-200 rounded-full text-xs sm:text-sm font-semibold text-gray-800 mb-5 md:mb-6">
+          {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-200 rounded-full text-xs sm:text-sm font-semibold text-gray-800 mb-5 md:mb-6">
             <ShieldCheck className="w-4 h-4 text-gray-600" />
             Free Confidential Consultation
-          </div>
+          </div> */}
 
           {/* Headline */}
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 leading-tight">

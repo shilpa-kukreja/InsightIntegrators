@@ -75,7 +75,7 @@ export default function TrustSection() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/image/05.png" // replace with your image
+                src="/image/Untitled design.png" // replace with your image
                 alt="Trusted Regulatory & Compliance Advisory in UAE"
                 width={650}
                 height={700}
@@ -84,14 +84,14 @@ export default function TrustSection() {
             </div>
 
             {/* Floating Trust Badge */}
-            <div className="absolute -bottom-6 -left-6 bg-white px-6 py-4 rounded-xl shadow-lg border border-gray-200 hidden md:block">
+            {/* <div className="absolute -bottom-6 -left-6 bg-white px-6 py-4 rounded-xl shadow-lg border border-gray-200 hidden md:block">
               <p className="text-sm text-gray-500 uppercase tracking-wide">
                 Regulatory Confidence
               </p>
               <p className="text-lg font-semibold text-gray-900">
                 UAE • DIFC • ADGM
               </p>
-            </div>
+            </div> */}
           </motion.div>
 
         </div>

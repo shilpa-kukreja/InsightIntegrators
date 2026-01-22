@@ -28,7 +28,7 @@ export default function Header() {
 
   const contactInfo = {
     phone: "+971 56 834 0225",
-    email: "lakeshgrover@gmail.com",
+    // email: "lakeshgrover@gmail.com",
   };
 
   return (
@@ -166,10 +166,10 @@ export default function Header() {
                 <Phone size={14} className="text-[#4f2e80]" />
                 <span className="font-medium">{contactInfo.phone}</span>
               </div> */}
-              <div className="flex items-center gap-2">
+              {/* <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#4f2e80]" />
                 <span>{contactInfo.email}</span>
-              </div>
+              </div> */}
               {/* <div className="flex items-center gap-2">
                 <MapPin size={14} className="text-blue-300" />
                 <span>{contactInfo.address}</span>

@@ -36,7 +36,8 @@ export default function ContactPopup({ onClose }) {
     { value: "difc-adgm", label: "DIFC / ADGM Support", icon: <Building className="w-4 h-4" /> },
     { value: "company-registration", label: "Company Registration", icon: <Building className="w-4 h-4" /> },
     { value: "gst-services", label: "GST Services", icon: <FileText className="w-4 h-4" /> },
-    { value: "accounting", label: "Accounting & Bookkeeping", icon: <FileText className="w-4 h-4" /> }
+    { value: "accounting", label: "Accounting & Bookkeeping", icon: <FileText className="w-4 h-4" /> },
+     { value: "other", label: "Other" , icon: <MessageSquare className="w-4 h-4" /> }, 
   ];
 
   const handleChange = (e) => {
@@ -53,14 +54,23 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   setIsLoading(true);
 
+  // ✅ FINAL DATA CREATE HERE
+  const finalData = {
+    ...formData,
+    serviceType:
+      formData.serviceType === "other"
+        ? formData.otherService
+        : formData.serviceType,
+  };
+
   try {
     await fetch(GOOGLE_SHEET_URL, {
       method: "POST",
       mode: "no-cors",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(finalData),
     });
 
     setIsSubmitted(true);
@@ -72,7 +82,8 @@ const handleSubmit = async (e) => {
         email: "",
         phone: "",
         serviceType: "",
-        message: ""
+        otherService: "", // ✅ reset this also
+        message: "",
       });
       setIsSubmitted(false);
       onClose();
@@ -115,7 +126,7 @@ const handleSubmit = async (e) => {
           className="relative w-full max-w-lg max-h-[90vh] "
         >
           {/* Modal Content */}
-          <div className="bg-white rounded-xl shadow-xl overflow-hidden">
+          <div className="bg-white rounded-xl shadow-xl  overflow-hidden">
             {/* Header */}
             <div className="relative p-8 bg-[#4f2e80]">
               {/* Close Button */}
@@ -143,7 +154,8 @@ const handleSubmit = async (e) => {
             </div>
 
             {/* Form Content */}
-            <div className="p-8">
+            <div className="p-8 max-h-[70vh] overflow-y-auto">
+
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -282,6 +294,44 @@ const handleSubmit = async (e) => {
                       </div>
                     </div>
                   </div>
+
+                  {/* Other Service Input */}
+{formData.serviceType === "other" && (
+  <motion.div
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    className="mt-4"
+  >
+    <label className="block text-sm font-semibold text-gray-700 mb-2">
+      Please specify your service <span className="text-red-500">*</span>
+    </label>
+
+    <div className="relative">
+      <div className="absolute inset-y-0 left-0 pl-3 flex items-start pt-3 pointer-events-none">
+        <MessageSquare className="w-5 h-5 text-gray-400" />
+      </div>
+
+     <textarea
+  name="otherService"
+  value={formData.otherService}
+  onChange={handleChange}
+  required
+  rows={3}
+  placeholder="Describe the service you are looking for..."
+  className="w-full pl-10 pr-4 py-3 
+    border border-gray-200 rounded-xl 
+    focus:ring-2 focus:ring-[#4f2e80] focus:border-transparent 
+    outline-none transition-all 
+    bg-gray-50 hover:bg-white focus:bg-white 
+    text-gray-900 placeholder-gray-400 
+    resize-none 
+    max-h-32 overflow-y-auto"   // 👈 IMPORTANT
+/>
+
+    </div>
+  </motion.div>
+)}
+
 
                   {/* Additional Message */}
                  
