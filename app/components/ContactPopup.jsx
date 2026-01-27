@@ -32,7 +32,8 @@ export default function ContactPopup({ onClose }) {
     { value: "internal-audit", label: "Internal Audit", icon: <FileText className="w-4 h-4" /> },
     { value: "aml-compliance", label: "AML / Compliance", icon: <Shield className="w-4 h-4" /> },
     { value: "corporate-governance", label: "Corporate Governance", icon: <Building className="w-4 h-4" /> },
-    { value: "tax-vat", label: "Tax / VAT", icon: <FileText className="w-4 h-4" /> },
+    { value: "vat", label: "VAT", icon: <FileText className="w-4 h-4" /> },
+    { value: "corporate-tax", label: "Corporate Tax", icon: <FileText className="w-4 h-4" /> },
     { value: "difc-adgm", label: "DIFC / ADGM Support", icon: <Building className="w-4 h-4" /> },
     { value: "company-registration", label: "Company Registration", icon: <Building className="w-4 h-4" /> },
     { value: "gst-services", label: "GST Services", icon: <FileText className="w-4 h-4" /> },
@@ -144,7 +145,7 @@ const handleSubmit = async (e) => {
                 </div> */}
                 
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  Free CA Consultation
+                  Free  Consultation
                 </h3>
                 
                 <p className="text-blue-100 text-sm">

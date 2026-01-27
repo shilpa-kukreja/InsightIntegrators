@@ -32,7 +32,7 @@ export default function HeroBanner() {
 
     const handleSubmit = async (e) => {
   e.preventDefault();
-    isLoading(true);
+    setIsLoading(true);
 
   // ✅ FINAL DATA CREATE HERE
   const finalData = {
@@ -131,146 +131,7 @@ export default function HeroBanner() {
                         {/* Right Side - Content */}
                         <div className="lg:col-span-7 space-y-8">
 
-                            {/* Premium Badge */}
-                            {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-3 mb-6 px-5 py-2.5 bg-gray-900 border border-white/20 rounded-full"
-          >
-            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-black">
-              <Award className="w-4 h-4 text-white" />
-            </div>
-            <div>
-              <span className="text-sm font-semibold text-gray-200">ICAI REGISTERED FIRM</span>
-              <span className="text-xs text-blue-200 ml-2">• Since 2010</span>
-            </div>
-          </motion.div> */}
-
-                            {/* Primary Headline */}
-                            {/* <motion.h1
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
-                                className="text-4xl md:text-5xl  font-bold text-gray-900 leading-tight tracking-tight"
-                            >
-                                Protect Your Business from{" "}
-                                <span className="text-white">Regulatory Risk, Penalties & Compliance Failures</span>
-                            </motion.h1> */}
-
-                            {/* Sub-Headline */}
-                            {/* <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                                className="mt-4 text-lg text-white max-w-3xl text-justify leading-relaxed"
-                            >
-                                Expert Internal Audit, AML, Tax & Corporate Governance Advisory for UAE, DIFC & ADGM Businesses.
-                            </motion.p> */}
-
-                            {/* Trust Line */}
-                            {/* <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.3 }}
-                                className="mt-4 text-md text-white font-medium"
-                            >
-                                ✔ UAE Regulatory Expertise | ✔ Regulator-Ready Frameworks | ✔ Senior-Led Engagements
-                            </motion.p> */}
-
-                            {/* Features Grid */}
-                            {/* <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.4 }}
-                                className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6"
-                            >
-                                {[
-                                    "Internal Audit & Risk Assurance",
-                                    "AML & Regulatory Compliance Advisory",
-                                    "Corporate Governance & Board Advisory",
-                                    "UAE Corporate Tax & VAT Services",
-                                    "ESR & Regulatory Reporting Support",
-                                    "DIFC & ADGM Compliance Services"
-                                ].map((feature, index) => (
-                                    <div key={index} className="flex items-center gap-4">
-                                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5  backdrop-blur-sm border border-[#4f2e80] flex items-center justify-center">
-                                            <CheckCircle className="w-5 h-5 text-white" />
-                                        </div>
-                                        <span className="text-md font-medium text-white">{feature}</span>
-                                    </div>
-                                ))}
-                            </motion.div> */}
-
-                            {/* Stats Grid */}
-                            {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
-              <div className="flex items-center gap-3">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-400/20">
-                  <Users className="w-6 h-6 text-blue-300" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-600">1,250+</div>
-                  <div className="text-sm text-gray-900">Happy Clients</div>
-                </div>
-              </div>
-            </div>
-            <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
-              <div className="flex items-center gap-3">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-green-500/20 to-green-400/20">
-                  <Star className="w-6 h-6 text-green-300" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-600">4.9/5</div>
-                  <div className="text-sm text-gray-900">Client Rating</div>
-                </div>
-              </div>
-            </div>
-            <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
-              <div className="flex items-center gap-3">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-400/20">
-                  <Clock className="w-6 h-6 text-purple-300" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-600">10+</div>
-                  <div className="text-sm text-gray-900">Years Experience</div>
-                </div>
-              </div>
-            </div>
-            <div className="p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all">
-              <div className="flex items-center gap-3">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-400/20">
-                  <Building2 className="w-6 h-6 text-amber-300" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-600">500+</div>
-                  <div className="text-sm text-gray-900">Companies Registered</div>
-                </div>
-              </div>
-            </div>
-          </motion.div> */}
-
-                            {/* CTA Buttons */}
-                            {/* <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.6 }}
-                                className="mt-12 flex flex-col sm:flex-row gap-6"
-                            >
-                                <button
-                                    onClick={() => setIsPopupOpen(true)}
-                                    className="group relative overflow-hidden inline-flex items-center cursor-pointer justify-center gap-3 bg-white hover:bg-white transition-all duration-500 px-10 py-5 rounded-2xl font-semibold text-white shadow-2xl shadow-blue-900/50 hover:shadow-3xl hover:shadow-blue-900/60"
-                                >
-                                    <div className="absolute inset-0 bg-white translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                                    <span className="relative z-10 text-md text-[#4f2e80]">Get a Free Compliance Risk Assessment</span>
-                                </button>
-                            </motion.div> */}
-
+                       
                             {/* Contact Popup */}
                             {isPopupOpen && <ContactPopup onClose={() => setIsPopupOpen(false)} />}
 
@@ -295,31 +156,14 @@ export default function HeroBanner() {
                                                     <MessageSquare className="w-6 h-6 text-white" />
                                                 </div>
                                                 <div>
-                                                    <h3 className="text-2xl font-bold text-white">Free CA Consultation</h3>
+                                                    <h3 className="text-2xl font-bold text-white">Free  Consultation</h3>
                                                     <p className="text-blue-100 text-sm mt-1">Speak directly with our experts</p>
                                                 </div>
                                             </div>
-                                            {/* <div className="hidden sm:block">
-                                                <div className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm">
-                                                    <span className="text-sm font-medium text-white">📞 24/7 Support</span>
-                                                </div>
-                                            </div> */}
+                                           
                                         </div>
 
-                                        {/* <div className="flex items-center gap-4 text-sm text-blue-100">
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-2 h-2 rounded-full bg-green-400" />
-                                                <span>Instant Response</span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-2 h-2 rounded-full bg-green-400" />
-                                                <span>No Hidden Fees</span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <div className="w-2 h-2 rounded-full bg-green-400" />
-                                                <span>100% Confidential</span>
-                                            </div>
-                                        </div> */}
+                                        
                                     </div>
 
                                     {/* Form Body */}
@@ -446,7 +290,8 @@ export default function HeroBanner() {
                                                         <option value="Internal Audit">Internal Audit</option>
                                                         <option value="AML / Compliance">AML / Compliance</option>
                                                         <option value="Corporate Governance">Corporate Governance</option>
-                                                        <option value="Tax / VAT">Tax / VAT</option>
+                                                        <option value="VAT">VAT</option>
+                                                        <option value="Corporate Tax">Corporate Tax</option>
                                                         <option value="DIFC / ADGM Support">DIFC / ADGM Support</option>
                                                         <option value="other">Other</option>
                                                     </select>
@@ -502,42 +347,13 @@ export default function HeroBanner() {
                                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                                                 </button>
 
-                                                {/* Security Assurance */}
-                                                {/* <div className="pt-6 border-t border-gray-100">
-                                                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-                                                        <div className="flex items-center gap-2">
-                                                            <Shield className="w-4 h-4 text-green-600" />
-                                                            <span>100% Secure & Confidential</span>
-                                                        </div>
-                                                        <div className="flex items-center gap-2">
-                                                            <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                                            </svg>
-                                                            <span>SSL Encrypted Connection</span>
-                                                        </div>
-                                                    </div>
-                                                </div> */}
+                                               
                                             </form>
                                         )}
                                     </div>
                                 </div>
 
-                                {/* Trust Badge */}
-                                {/* <div className="mt-8 flex items-center justify-center gap-6 text-sm text-white">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-8 h-8 rounded-full bg-green-500/20 backdrop-blur-sm border border-green-500/30 flex items-center justify-center">
-                                            <CheckCircle className="w-4 h-4 text-green-400" />
-                                        </div>
-                                        <span>No Spam Guarantee</span>
-                                    </div>
-                                    <div className="h-4 w-px bg-white/30" />
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-8 h-8 rounded-full bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 flex items-center justify-center">
-                                            <Clock className="w-4 h-4 text-blue-400" />
-                                        </div>
-                                        <span>Response in 30 min</span>
-                                    </div>
-                                </div> */}
+                              
                             </div>
                         </motion.div>
                     </div>

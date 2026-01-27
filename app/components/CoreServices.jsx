@@ -55,11 +55,11 @@ export default function CoreServicesSection() {
               Our Key Services
             </h2>
 
-            <p className="text-lg text-gray-600 mb-10">
+            {/* <p className="text-lg text-gray-600 mb-10">
               Choose a category to explore our advisory and consulting expertise.
-            </p>
+            </p> */}
 
-            {/* Advisory Section */}
+            {/* Advisory */}
             <Dropdown
               title="Advisory Services"
               isOpen={open === "advisory"}
@@ -72,24 +72,50 @@ export default function CoreServicesSection() {
               <ServiceItem icon={<CheckCircle />} text="Forensic and Investigative Services" />
             </Dropdown>
 
-            {/* Consulting Section */}
+            {/* Consulting */}
             <Dropdown
               title="Consulting Services"
               isOpen={open === "consulting"}
               onClick={() => toggle("consulting")}
             >
               <ServiceItem icon={<Scale />} text="Business Transformation" />
-              
             </Dropdown>
 
-              <Dropdown
+            {/* Financial Advisory */}
+            <Dropdown
               title="Financial Advisory Services"
               isOpen={open === "financial"}
               onClick={() => toggle("financial")}
             >
-              <ServiceItem icon={<Scale />} text="Business Valuations " />
-              <ServiceItem icon={<CheckCircle />} text="Business Set Up and Licensing Service" />
+              <ServiceItem icon={<Scale />} text="Business Valuations" />
+             
             </Dropdown>
+
+            {/* Business Setup */}
+            <Dropdown
+              title="Business Set Up and Licensing "
+              isOpen={open === "setup"}
+              onClick={() => toggle("setup")}
+            >
+             
+            </Dropdown>
+
+            {/* Tax */}
+            <Dropdown
+              title="Tax Services"
+              isOpen={open === "tax"}
+              onClick={() => toggle("tax")}
+            >
+              <ServiceItem icon={<Scale />} text="Corporate Tax Advisory and Compliance service" />
+              <ServiceItem icon={<CheckCircle />} text="Transfer Pricing Advisory service" />
+              <ServiceItem icon={<CheckCircle />} text="International Tax and Structuring service" />
+              <ServiceItem icon={<CheckCircle />} text="VAT and Indirect Tax service" />
+              <ServiceItem icon={<CheckCircle />} text="ESR Compliance service" />
+              <ServiceItem icon={<CheckCircle />} text="Excise Tax Advisory service" />
+              <ServiceItem icon={<CheckCircle />} text="Customs and International Trade Compliance service" />
+            </Dropdown>
+
+
 
           </motion.div>
         </div>
@@ -108,9 +134,8 @@ function Dropdown({ title, isOpen, onClick, children }) {
       >
         {title}
         <ChevronDown
-          className={`transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+            }`}
         />
       </button>
 

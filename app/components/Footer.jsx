@@ -19,7 +19,7 @@ export default function Footer({ onOpenPopup }) {
     <>
       {/* FOOTER */}
       <footer className="bg-gray-900 text-gray-200 relative">
-        <div className="max-w-7xl mx-auto px-6 sm:py-16 py-12 grid gap-12 md:grid-cols-4">
+        <div className="max-w-7xl mx-auto px-6 sm:py-16 py-12 grid gap-12 md:grid-cols-3">
 
           {/* Brand */}
           <div className="space-y-4">
@@ -67,7 +67,7 @@ export default function Footer({ onOpenPopup }) {
           </div>
 
           {/* Advisory Services */}
-          <div>
+          {/* <div>
             <button
               onClick={() => setOpenServices(!openServices)}
               className="w-full flex items-center justify-between md:pointer-events-none"
@@ -90,7 +90,7 @@ export default function Footer({ onOpenPopup }) {
               <li>AML / CFT Advisory</li>
               <li>Risk & Control Assessments</li>
             </ul>
-          </div>
+          </div> */}
 
           {/* CTA */}
           <div className="flex flex-col space-y-6">

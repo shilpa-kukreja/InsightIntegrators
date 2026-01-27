@@ -44,7 +44,7 @@ export default function TrustSection() {
             <div className="space-y-5">
               <TrustItem
                 icon={<Landmark />}
-                text="Deep knowledge of UAE, DIFC & ADGM regulations"
+                text="Deep knowledge of UAE regulations"
               />
               <TrustItem
                 icon={<ShieldCheck />}
