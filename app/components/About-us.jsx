@@ -73,7 +73,7 @@ function AboutUs() {
               >
                 Led by Experienced{" "}
                 <span className="text-[#4f2e80]">
-                  Compliance & Audit Professionals
+                   Professionals
                 </span>
               </motion.h2>
 
@@ -84,7 +84,7 @@ function AboutUs() {
                 transition={{ delay: 0.2 }}
                 className="text-xl text-gray-600 max-w-3xl text-justify leading-relaxed"
               >
-                Senior-led compliance and audit advisory delivering clarity,
+                Senior-led  audit, advisory and tax services delivers clarity,
                 confidence, and regulator-aligned outcomes.
               </motion.p>
             </div>
@@ -98,21 +98,15 @@ function AboutUs() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-700 text-justify leading-relaxed">
-                Our firm is led by senior compliance and audit professionals with
-                deep experience across Internal audit, AML, Corporate governance,
-                and Regulatory compliance.
+               Our firm is led by seasoned professionals with extensive expertise in Internal Audit, Risk Management, Anti-Money Laundering (AML), Value Added Tax (VAT), Corporate Tax, Company Formation, and Accounting services.
               </p>
 
               <p className="text-lg text-gray-700 text-justify leading-relaxed">
-                Engagements are personally led by our Chief Compliance Officer, Founder & Principal
-                Consultant, bringing over 15 years of hands-on experience across
-                highly regulated industries.
+              Our engagements are led by Auditors, Chief Compliance Officers, Engineers, Tax Consultants, and industry specialists, collectively bringing over 15 years of hands-on experience.
               </p>
 
               <p className="text-lg text-gray-700 text-justify leading-relaxed">
-                Experience spans Retail, Manufacturing, Financial Services,
-                Hospitality, Real Estate, and Family Offices, with a strong
-                understanding of regulator expectations.
+              Our expertise spans a diverse range of sectors, including Financial Services, Real Estate, Retail, Hospitality, Manufacturing, and Family Offices, supported by a deep understanding of regulatory requirements.
               </p>
             </motion.div>
 

@@ -25,7 +25,7 @@ export default function Footer({ onOpenPopup }) {
           <div className="space-y-4">
             <img src="/image/logo-white.png" alt="Insight Integrators" className="w-36" />
             <p className="text-sm leading-relaxed text-gray-300">
-              <strong>Insight Integrators – UAE</strong> is an independent advisory firm
+              <strong>Insight Integrators L.L.C - FZ - UAE</strong> is an independent advisory firm
               specializing in compliance, audit, governance, and risk advisory.
             </p>
             <p className="text-xs text-gray-400">
@@ -51,14 +51,14 @@ export default function Footer({ onOpenPopup }) {
               className={`mt-4 space-y-3 text-sm
                 ${openContact ? "block" : "hidden"} md:block`}
             >
-              {/* <li className="flex items-center gap-3">
+               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#4f2e80]" />
-                +971 56 834 0225
-              </li> */}
-              {/* <li className="flex items-center gap-3">
+                +971526806400
+              </li> 
+              <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#4f2e80]" />
-                lakeshgrover@gmail.com
-              </li> */}
+                https://insightintegrators.ae/
+              </li>
               <li className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-[#4f2e80]" />
                 United Arab Emirates

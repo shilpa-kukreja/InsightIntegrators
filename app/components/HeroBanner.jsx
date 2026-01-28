@@ -209,7 +209,7 @@ export default function HeroBanner() {
 
                                                 <div>
                                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                        Company Name <span className="text-red-500">*</span>
+                                                        Company Name <span className="text-red-500"></span>
                                                     </label>
                                                     <div className="relative">
                                                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -223,7 +223,7 @@ export default function HeroBanner() {
                                                             value={formData.companyName}
                                                             onChange={handleChange}
                                                             placeholder="Enter your company name"
-                                                            required
+                                                        
                                                             className="w-full pl-10 pr-4 py-3.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 hover:bg-white focus:bg-white text-gray-900 placeholder-gray-400"
                                                         />
                                                     </div>
@@ -277,13 +277,13 @@ export default function HeroBanner() {
                                                 {/* Service Selection */}
                                                 <div>
                                                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                                        Select Service Required <span className="text-red-500">*</span>
+                                                        Select Service <span className="text-red-500"></span>
                                                     </label>
                                                     <select
                                                         name="serviceType"
                                                         value={formData.serviceType}
                                                         onChange={handleChange}
-                                                        required
+                                                        
                                                         className="w-full border border-gray-200 px-4 py-3.5 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 hover:bg-white focus:bg-white text-gray-900 placeholder-gray-400 appearance-none"
                                                     >
                                                         <option value="">Select a service</option>

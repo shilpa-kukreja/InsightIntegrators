@@ -34,7 +34,7 @@ export default function HomePage() {
       <Services />
       <Stats /> */}
       <ReviewsSection />
-      <FAQSection />
+      {/* <FAQSection /> */}
       <Footer onOpenPopup={() => setIsPopupOpen(true)}/>
     </>
   );

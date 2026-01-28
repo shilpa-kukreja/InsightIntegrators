@@ -268,7 +268,7 @@ const handleSubmit = async (e) => {
                   {/* Service Type */}
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Type of Service Required <span className="text-red-500">*</span>
+                      Type of Service  <span className="text-red-500"></span>
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -278,7 +278,7 @@ const handleSubmit = async (e) => {
                         name="serviceType"
                         value={formData.serviceType}
                         onChange={handleChange}
-                        required
+                        
                         className="w-full pl-10 pr-4 py-3.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#4f2e80] focus:border-transparent outline-none transition-all bg-gray-50 hover:bg-white focus:bg-white text-gray-900 placeholder-gray-400 appearance-none"
                       >
                         <option value="">Select a service</option>
