@@ -65,11 +65,12 @@ export default function CoreServicesSection() {
               isOpen={open === "advisory"}
               onClick={() => toggle("advisory")}
             >
-              <ServiceItem icon={<FileText />} text="Business Risk and Control Service" />
-              <ServiceItem icon={<ShieldCheck />} text="Regulatory Compliance Service" />
-              <ServiceItem icon={<Building2 />} text="AML and Financial Crime Service" />
-              <ServiceItem icon={<Landmark />} text="Specialised Services for DIFC and ADGM entities" />
-              <ServiceItem icon={<CheckCircle />} text="Forensic and Investigative Services" />
+              <ServiceItem icon={<FileText />} text="Internal Audit " />
+              <ServiceItem icon={<ShieldCheck />} text="AML" />
+              <ServiceItem icon={<Building2 />} text="Enterprise Risk Management" />
+              <ServiceItem icon={<Landmark />} text="Governance" />
+              <ServiceItem icon={<CheckCircle />} text="Bussiness Valuation" />
+              <ServiceItem icon={<CheckCircle />} text="Feasibility Study" />
             </Dropdown>
 
             {/* Consulting */}
@@ -91,29 +92,28 @@ export default function CoreServicesSection() {
              
             </Dropdown>
 
-            {/* Business Setup */}
-            <Dropdown
-              title="Business Set Up and Licensing "
-              isOpen={open === "setup"}
-              onClick={() => toggle("setup")}
-            >
-             
-            </Dropdown>
-
-            {/* Tax */}
+             {/* Tax */}
             <Dropdown
               title="Tax Services"
               isOpen={open === "tax"}
               onClick={() => toggle("tax")}
             >
-              <ServiceItem icon={<Scale />} text="Corporate Tax Advisory and Compliance service" />
-              <ServiceItem icon={<CheckCircle />} text="Transfer Pricing Advisory service" />
-              <ServiceItem icon={<CheckCircle />} text="International Tax and Structuring service" />
-              <ServiceItem icon={<CheckCircle />} text="VAT and Indirect Tax service" />
-              <ServiceItem icon={<CheckCircle />} text="ESR Compliance service" />
-              <ServiceItem icon={<CheckCircle />} text="Excise Tax Advisory service" />
-              <ServiceItem icon={<CheckCircle />} text="Customs and International Trade Compliance service" />
+              <ServiceItem icon={<Scale />} text="VAT" />
+              <ServiceItem icon={<CheckCircle />} text="Corporate Tax" />
             </Dropdown>
+
+            {/* Business Setup */}
+            <Dropdown
+              title="Business Set Up  "
+              isOpen={open === "setup"}
+              onClick={() => toggle("setup")}
+            >
+             <ServiceItem icon={<Scale />} text="Main Land" />
+             <ServiceItem icon={<Scale />} text="Free Zone" />
+              <ServiceItem icon={<Scale />} text="Company Formation" />
+            </Dropdown>
+
+           
 
 
 
