@@ -25,7 +25,7 @@ export default function Footer({ onOpenPopup }) {
           <div className="space-y-4">
             <img src="/image/logo-white.png" alt="Insight Integrators" className="w-36" />
             <p className="text-sm leading-relaxed text-gray-300">
-              <strong>Insight Integrators L.L.C - FZ - UAE</strong> is an independent advisory firm
+              <strong>Insight Integrators L.L.C - FZ</strong> is an independent advisory firm
               specializing in compliance, audit, governance, and risk advisory.
             </p>
             <p className="text-xs text-gray-400">
