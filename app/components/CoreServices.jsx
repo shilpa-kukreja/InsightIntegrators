@@ -69,28 +69,28 @@ export default function CoreServicesSection() {
               <ServiceItem icon={<ShieldCheck />} text="AML" />
               <ServiceItem icon={<Building2 />} text="Enterprise Risk Management" />
               <ServiceItem icon={<Landmark />} text="Governance" />
-              <ServiceItem icon={<CheckCircle />} text="Bussiness Valuation" />
+              <ServiceItem icon={<CheckCircle />} text="Business Valuation" />
               <ServiceItem icon={<CheckCircle />} text="Feasibility Study" />
             </Dropdown>
 
             {/* Consulting */}
-            <Dropdown
+            {/* <Dropdown
               title="Consulting Services"
               isOpen={open === "consulting"}
               onClick={() => toggle("consulting")}
             >
               <ServiceItem icon={<Scale />} text="Business Transformation" />
-            </Dropdown>
+            </Dropdown> */}
 
             {/* Financial Advisory */}
-            <Dropdown
+            {/* <Dropdown
               title="Financial Advisory Services"
               isOpen={open === "financial"}
               onClick={() => toggle("financial")}
             >
               <ServiceItem icon={<Scale />} text="Business Valuations" />
              
-            </Dropdown>
+            </Dropdown> */}
 
              {/* Tax */}
             <Dropdown
@@ -108,9 +108,9 @@ export default function CoreServicesSection() {
               isOpen={open === "setup"}
               onClick={() => toggle("setup")}
             >
-             <ServiceItem icon={<Scale />} text="Main Land" />
-             <ServiceItem icon={<Scale />} text="Free Zone" />
-              <ServiceItem icon={<Scale />} text="Company Formation" />
+             <ServiceItem icon={<Scale />} text="Mainland company formation " />
+             <ServiceItem icon={<Scale />} text="Freezone company formation" />
+              {/* <ServiceItem icon={<Scale />} text="Company Formation" /> */}
             </Dropdown>
 
            
