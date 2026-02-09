@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Insightintegrators",
-  description: "Senior-led audit, advisory and tax services delivers clarity, confidence, and regulator-aligned outcomes.",
+  title: "Insight Integrators L.L.C - FZ",
+  description: "Insight Integrators L.L.C - FZ is an independent advisory firm specializing in compliance, audit, governance, and risk advisory.",
 };
 
 export default function RootLayout({ children }) {
