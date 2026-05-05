@@ -59,11 +59,14 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Google Tag Manager / Ads Script */}
+       
+        {/* Your Google Ads Script (correct way) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-18100457132"
           strategy="afterInteractive"
         />
-        <Script id="google-ads" strategy="afterInteractive">
+
+        <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -71,6 +74,7 @@ export default function RootLayout({ children }) {
             gtag('config', 'AW-18100457132');
           `}
         </Script>
+       
 
         {children}
       </body>
