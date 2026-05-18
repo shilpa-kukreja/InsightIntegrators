@@ -2,17 +2,17 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  X, 
-  Phone, 
-  Mail, 
-  User, 
-  Building, 
-  FileText, 
-  Shield, 
+import {
+  X,
+  Phone,
+  Mail,
+  User,
+  Building,
+  FileText,
+  Shield,
   CheckCircle,
   Calendar,
-  MessageSquare
+  MessageSquare,
 } from "lucide-react";
 
 export default function ContactPopup({ onClose }) {
@@ -22,84 +22,129 @@ export default function ContactPopup({ onClose }) {
     email: "",
     phone: "",
     serviceType: "",
-    message: ""
+    message: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const serviceOptions = [
-    { value: "internal-audit", label: "Internal Audit", icon: <FileText className="w-4 h-4" /> },
-    { value: "aml-compliance", label: "AML / Compliance", icon: <Shield className="w-4 h-4" /> },
-    { value: "corporate-governance", label: "Corporate Governance", icon: <Building className="w-4 h-4" /> },
+    {
+      value: "internal-audit",
+      label: "Internal Audit",
+      icon: <FileText className="w-4 h-4" />,
+    },
+    {
+      value: "aml-compliance",
+      label: "AML / Compliance",
+      icon: <Shield className="w-4 h-4" />,
+    },
+    {
+      value: "corporate-governance",
+      label: "Corporate Governance",
+      icon: <Building className="w-4 h-4" />,
+    },
     { value: "vat", label: "VAT", icon: <FileText className="w-4 h-4" /> },
-    { value: "corporate-tax", label: "Corporate Tax", icon: <FileText className="w-4 h-4" /> },
-    { value: "difc-adgm", label: "DIFC / ADGM Support", icon: <Building className="w-4 h-4" /> },
-    { value: "company-registration", label: "Company Registration", icon: <Building className="w-4 h-4" /> },
-    { value: "gst-services", label: "GST Services", icon: <FileText className="w-4 h-4" /> },
-    { value: "accounting", label: "Accounting & Bookkeeping", icon: <FileText className="w-4 h-4" /> },
-     { value: "other", label: "Other" , icon: <MessageSquare className="w-4 h-4" /> }, 
+    {
+      value: "corporate-tax",
+      label: "Corporate Tax",
+      icon: <FileText className="w-4 h-4" />,
+    },
+    {
+      value: "difc-adgm",
+      label: "DIFC / ADGM Support",
+      icon: <Building className="w-4 h-4" />,
+    },
+    {
+      value: "company-registration",
+      label: "Company Registration",
+      icon: <Building className="w-4 h-4" />,
+    },
+    {
+      value: "gst-services",
+      label: "GST Services",
+      icon: <FileText className="w-4 h-4" />,
+    },
+    {
+      value: "accounting",
+      label: "Accounting & Bookkeeping",
+      icon: <FileText className="w-4 h-4" />,
+    },
+    {
+      value: "other",
+      label: "Other",
+      icon: <MessageSquare className="w-4 h-4" />,
+    },
   ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
-const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbycC_dHrLGFYzldh9FBiIgcVWYkEkEH618Qh4yJn55pUUYoMY-fOA3aE_AHMoWYKhdw/exec";
+  const GOOGLE_SHEET_URL =
+    // "https://script.google.com/macros/s/AKfycbycC_dHrLGFYzldh9FBiIgcVWYkEkEH618Qh4yJn55pUUYoMY-fOA3aE_AHMoWYKhdw/exec";
+    // "https://script.google.com/macros/s/AKfycbya1p_onnMF7OGMCU2jAPEF2y_g4EoX83xuD_u1GPOGVeLdp0IU3409D_B46MqyTbsu/exec";
+    "https://script.google.com/macros/s/AKfycbyZvHfKtVW22C-jDr0QcGexrEawnyFqJXhiVIRvrfqV6ER_wtHfF8zRnJ2CUaJylVCx/exec";
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsLoading(true);
 
-  // ✅ FINAL DATA CREATE HERE
-  const finalData = {
-    ...formData,
-    serviceType:
-      formData.serviceType === "other"
-        ? formData.otherService
-        : formData.serviceType,
-  };
 
-  try {
-    await fetch(GOOGLE_SHEET_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(finalData),
-    });
 
-    setIsSubmitted(true);
 
-    setTimeout(() => {
-      setFormData({
-        fullName: "",
-        companyName: "",
-        email: "",
-        phone: "",
-        serviceType: "",
-        otherService: "", // ✅ reset this also
-        message: "",
+
+
+
+
+    //  Deployment ID  AKfycbya1p_onnMF7OGMCU2jAPEF2y_g4EoX83xuD_u1GPOGVeLdp0IU3409D_B46MqyTbsu
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    // ✅ FINAL DATA CREATE HERE
+    const finalData = {
+      ...formData,
+      serviceType:
+        formData.serviceType === "other"
+          ? formData.otherService
+          : formData.serviceType,
+    };
+
+    try {
+      await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(finalData),
       });
-      setIsSubmitted(false);
-      onClose();
-    }, 3000);
 
-  } catch (error) {
-    console.error("Fetch error:", error);
-    alert("Something went wrong");
-  } finally {
-    setIsLoading(false);
-  }
-};
+      setIsSubmitted(true);
 
-
-
+      setTimeout(() => {
+        setFormData({
+          fullName: "",
+          companyName: "",
+          email: "",
+          phone: "",
+          serviceType: "",
+          otherService: "", // ✅ reset this also
+          message: "",
+        });
+        setIsSubmitted(false);
+        onClose();
+      }, 3000);
+    } catch (error) {
+      console.error("Fetch error:", error);
+      alert("Something went wrong");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -143,11 +188,11 @@ const handleSubmit = async (e) => {
                 {/* <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm mb-6">
                   <Calendar className="w-8 h-8 text-white" />
                 </div> */}
-                
+
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  Free  Consultation
+                  Free Consultation
                 </h3>
-                
+
                 <p className="text-blue-100 text-sm">
                   Speak directly with our Chartered Accountant experts
                 </p>
@@ -156,7 +201,6 @@ const handleSubmit = async (e) => {
 
             {/* Form Content */}
             <div className="p-8 max-h-[70vh] overflow-y-auto">
-
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -268,7 +312,7 @@ const handleSubmit = async (e) => {
                   {/* Service Type */}
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Type of Service  <span className="text-red-500"></span>
+                      Type of Service <span className="text-red-500"></span>
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -278,7 +322,6 @@ const handleSubmit = async (e) => {
                         name="serviceType"
                         value={formData.serviceType}
                         onChange={handleChange}
-                        
                         className="w-full pl-10 pr-4 py-3.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#4f2e80] focus:border-transparent outline-none transition-all bg-gray-50 hover:bg-white focus:bg-white text-gray-900 placeholder-gray-400 appearance-none"
                       >
                         <option value="">Select a service</option>
@@ -289,53 +332,61 @@ const handleSubmit = async (e) => {
                         ))}
                       </select>
                       <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                        <svg
+                          className="w-5 h-5 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 9l-7 7-7-7"
+                          />
                         </svg>
                       </div>
                     </div>
                   </div>
 
                   {/* Other Service Input */}
-{formData.serviceType === "other" && (
-  <motion.div
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    className="mt-4"
-  >
-    <label className="block text-sm font-semibold text-gray-700 mb-2">
-      Please specify your service <span className="text-red-500">*</span>
-    </label>
+                  {formData.serviceType === "other" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-4"
+                    >
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Please specify your service{" "}
+                        <span className="text-red-500">*</span>
+                      </label>
 
-    <div className="relative">
-      <div className="absolute inset-y-0 left-0 pl-3 flex items-start pt-3 pointer-events-none">
-        <MessageSquare className="w-5 h-5 text-gray-400" />
-      </div>
+                      <div className="relative">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-start pt-3 pointer-events-none">
+                          <MessageSquare className="w-5 h-5 text-gray-400" />
+                        </div>
 
-     <textarea
-  name="otherService"
-  value={formData.otherService}
-  onChange={handleChange}
-  required
-  rows={3}
-  placeholder="Describe the service you are looking for..."
-  className="w-full pl-10 pr-4 py-3 
+                        <textarea
+                          name="otherService"
+                          value={formData.otherService}
+                          onChange={handleChange}
+                          required
+                          rows={3}
+                          placeholder="Describe the service you are looking for..."
+                          className="w-full pl-10 pr-4 py-3 
     border border-gray-200 rounded-xl 
     focus:ring-2 focus:ring-[#4f2e80] focus:border-transparent 
     outline-none transition-all 
     bg-gray-50 hover:bg-white focus:bg-white 
     text-gray-900 placeholder-gray-400 
     resize-none 
-    max-h-32 overflow-y-auto"   // 👈 IMPORTANT
-/>
-
-    </div>
-  </motion.div>
-)}
-
+    max-h-32 overflow-y-auto" // 👈 IMPORTANT
+                        />
+                      </div>
+                    </motion.div>
+                  )}
 
                   {/* Additional Message */}
-                 
 
                   {/* Submit Button */}
                   <button
@@ -348,9 +399,24 @@ const handleSubmit = async (e) => {
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {isLoading ? (
                         <>
-                          <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                          <svg
+                            className="animate-spin h-5 w-5 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            />
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            />
                           </svg>
                           Processing...
                         </>
@@ -365,9 +431,6 @@ const handleSubmit = async (e) => {
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                     )}
                   </button>
-
-                  
-                 
                 </form>
               )}
             </div>

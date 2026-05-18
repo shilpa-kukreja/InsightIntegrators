@@ -12,6 +12,7 @@ import TrustSection from "./components/Insight";
 import EngagementProcessSection from "./components/EngagementProcess";
 import LeadMagnetSection from "./components/LeadMagnet";
 import ContactPopup from "./components/ContactPopup";
+import HeroSection from "./components/HeroSection";
 import { useState } from "react";
 
 
@@ -21,7 +22,8 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <HeroBanner />
+      {/* <HeroBanner /> */}
+      <HeroSection/>
       <AboutUs />
       <ProblemAwarenessSection/>
       <CoreServicesSection/>

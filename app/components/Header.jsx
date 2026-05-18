@@ -1,6 +1,17 @@
 "use client";
 
-import { Phone, Mail, MapPin, Menu, X, Shield, ChevronDown, Building2, Calendar } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Menu,
+  X,
+  Shield,
+  ChevronDown,
+  Building2,
+  Calendar,
+  Globe,
+} from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ContactPopup from "./ContactPopup";
@@ -20,10 +31,42 @@ export default function Header() {
   }, []);
 
   const services = [
-    { title: "Taxation Services", items: ["Income Tax Filing", "GST Registration", "GST Filing", "TDS/TCS Compliance"] },
-    { title: "Company Services", items: ["Private Limited", "LLP Registration", "One Person Company", "Startup Registration"] },
-    { title: "Compliance Services", items: ["Annual Compliance", "ROC Filing", "Audit Services", "Secretarial Services"] },
-    { title: "Advisory Services", items: ["Business Advisory", "Tax Planning", "Financial Consulting", "Legal Services"] }
+    {
+      title: "Taxation Services",
+      items: [
+        "Income Tax Filing",
+        "GST Registration",
+        "GST Filing",
+        "TDS/TCS Compliance",
+      ],
+    },
+    {
+      title: "Company Services",
+      items: [
+        "Private Limited",
+        "LLP Registration",
+        "One Person Company",
+        "Startup Registration",
+      ],
+    },
+    {
+      title: "Compliance Services",
+      items: [
+        "Annual Compliance",
+        "ROC Filing",
+        "Audit Services",
+        "Secretarial Services",
+      ],
+    },
+    {
+      title: "Advisory Services",
+      items: [
+        "Business Advisory",
+        "Tax Planning",
+        "Financial Consulting",
+        "Legal Services",
+      ],
+    },
   ];
 
   // const contactInfo = {
@@ -69,17 +112,17 @@ export default function Header() {
       </div> */}
 
       {/* Main Header */}
-      <header 
+      <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? "bg-white/95 backdrop-blur-md shadow-2xl shadow-blue-900/10 border-b border-blue-100" 
+          isScrolled
+            ? "bg-white/95 backdrop-blur-md shadow-2xl shadow-blue-900/10 border-b border-blue-100"
             : "bg-white shadow-lg"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center gap-3"
@@ -91,14 +134,12 @@ export default function Header() {
                 </div>
               </div> */}
               <div>
-               <img src="/image/logos.png" alt="CA Firm" className="w-32" />
-               
+                <img src="/image/logos.png" alt="CA Firm" className="w-32" />
               </div>
             </motion.div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
-            
               {/* <a 
                 href="/" 
                 className="text-gray-700 hover:text-blue-600 font-medium text-sm transition-colors duration-200 relative group"
@@ -107,7 +148,6 @@ export default function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300" />
               </a> */}
 
-             
               {/* <div 
                 className="relative"
                 onMouseEnter={() => setActiveDropdown("services")}
@@ -162,21 +202,20 @@ export default function Header() {
               </div> */}
 
               <div className="flex items-center gap-6">
-              {/* <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                 <Phone size={14} className="text-[#4f2e80]" />
                 <span className="font-medium">{contactInfo.phone}</span>
               </div> */}
-              {/* <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                 <Mail size={14} className="text-[#4f2e80]" />
                 <span>{contactInfo.email}</span>
               </div> */}
-              {/* <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                 <MapPin size={14} className="text-blue-300" />
                 <span>{contactInfo.address}</span>
               </div> */}
-            </div>
+              </div>
 
-             
               {/* {["About Us", "Case Studies", "Blog", "Contact"].map((item) => (
                 <a 
                   key={item}
@@ -188,17 +227,31 @@ export default function Header() {
                 </a>
               ))} */}
 
-             
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setOpen(true)}
-                className="relative group overflow-hidden bg-[#4f2e80] text-white px-8 py-3 rounded-xl font-semibold text-sm shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300 flex items-center gap-3"
+                className="relative group overflow-hidden bg-[#4f2e80] text-white px-8 py-3 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center gap-3"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                 <Phone size={18} className="relative z-10" />
                 <span className="relative z-10">Free Consultation</span>
               </motion.button>
+
+              <motion.a
+                href="https://insight-integrator.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative group overflow-hidden bg-[#4f2e80] text-white px-8 py-3 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center gap-3"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+
+                <Globe size={18} className="relative z-10" />
+
+                <span className="relative z-10">Visit Website</span>
+              </motion.a>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -223,7 +276,7 @@ export default function Header() {
                 <div className="py-6 border-t border-gray-100">
                   <div className="space-y-4">
                     {/* <a href="/" className="block text-gray-700 hover:text-blue-600 font-medium py-2">Home</a> */}
-                    
+
                     {/* Mobile Services Accordion */}
                     {/* <div className="border-b border-gray-100 pb-4">
                       <button 
@@ -266,7 +319,7 @@ export default function Header() {
                         <Phone size={18} />
                         Free Consultation
                       </button>
-                      
+
                       {/* Mobile Contact Info */}
                       <div className="mt-6 space-y-3 text-sm text-gray-600">
                         {/* <div className="flex items-center gap-2">
