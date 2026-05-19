@@ -33,24 +33,41 @@ export default function MasterclassPopup({
   });
   const serviceOptions = [
     {
-      value: "online-coaching",
-      label: "Online Coaching Business",
+      value: "internal-audit",
+      label: "Internal Audit",
     },
     {
-      value: "ai-marketing",
-      label: "AI Marketing",
+      value: "aml",
+      label: "AML",
     },
     {
-      value: "course-creation",
-      label: "Course Creation",
+      value: "enterprise-risk-management",
+      label: "Enterprise Risk Management",
     },
     {
-      value: "sales-funnel",
-      label: "Sales Funnel",
+      value: "governance",
+      label: "Governance",
     },
     {
-      value: "personal-branding",
-      label: "Personal Branding",
+      value: "business-valuation",
+      label: "Business Valuation",
+    },
+    {
+      value: "feasibility-study",
+      label: "Feasibility Study",
+    },
+    {
+      value: "VAT",
+      label: "VAT",
+    },{
+      value: "corporate-tax",
+      label: "Corporate Tax",
+    },{
+      value: "mainland-company-formation",
+      label: "Mainland Company Formation",
+    },{
+      value: "freezone-company-formation",
+      label: "Freezone Company Formation",
     },
     {
       value: "other",
@@ -297,7 +314,7 @@ export default function MasterclassPopup({
                 {/* Service Type */}
                 <div>
                   <label className="mb-2 block text-sm font-semibold">
-                    Interested In
+                    Type of Service
                   </label>
 
                   <div className="relative">
@@ -307,7 +324,7 @@ export default function MasterclassPopup({
                       onChange={handleChange}
                       className="w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 py-3 pl-4 pr-10 outline-none focus:border-[#4f2e80]"
                     >
-                      <option value="">Select an option</option>
+                      <option value="">Select an service</option>
 
                       {serviceOptions.map((option) => (
                         <option key={option.value} value={option.value}>
