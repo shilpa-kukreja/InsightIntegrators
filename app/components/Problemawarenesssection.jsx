@@ -25,12 +25,12 @@ export default function ProblemAwarenessSection() {
             transition={{ duration: 0.8 }}
             className="lg:sticky lg:top-32 text-center lg:text-left"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
+            <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
               Regulatory Expectations Are Increasing
               <span className="block text-[#4f2e80] mt-3">
                 Are You Fully Prepared?
               </span>
-            </h2>
+            </p>
 
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-6 sm:mt-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
               Businesses today face heightened regulatory scrutiny, evolving
@@ -51,29 +51,68 @@ export default function ProblemAwarenessSection() {
             </div>
           </motion.div>
 
-          {/* RIGHT SIDE – PAIN POINTS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-            <PainCard
-              icon={<FileWarning />}
-              text="Unclear or outdated compliance frameworks"
-            />
-            <PainCard
-              icon={<ShieldAlert />}
-              text="High exposure to regulatory inspections and audits"
-            />
-            <PainCard
-              icon={<Scale />}
-              text="Weak internal controls and governance gaps"
-            />
-            <PainCard
-              icon={<AlertTriangle />}
-              text="Risk of penalties, enforcement action, and reputational damage"
-            />
-            <PainCard
-              icon={<Users />}
-              text="Limited in-house compliance expertise"
-            />
-          </div>
+         {/* RIGHT SIDE – PAIN POINTS */}
+<div className="">
+  <div className="flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white">
+      <FileWarning size={26} />
+    </div>
+
+    <div >
+      <h4 className="pt-2 text-lg font-medium leading-snug text-[#111]">
+        Unclear or outdated compliance frameworks
+      </h4>
+    </div>
+  </div>
+
+  <div className="mt-2 flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white">
+      <ShieldAlert size={26} />
+    </div>
+
+    <div>
+      <h4 className="pt-2 text-lg font-medium leading-snug text-[#111]">
+        High exposure to regulatory inspections and audits
+      </h4>
+    </div>
+  </div>
+
+  <div className="mt-2 flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white">
+      <Scale size={26} />
+    </div>
+
+    <div>
+      <h4 className="pt-2 text-lg font-medium leading-snug text-[#111]">
+        Weak internal controls and governance gaps
+      </h4>
+    </div>
+  </div>
+
+  <div className="mt-2 flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white">
+      <AlertTriangle size={26} />
+    </div>
+
+    <div>
+      <h4 className="pt-2 text-lg font-medium leading-snug text-[#111]">
+        Risk of penalties, enforcement action, and reputational damage
+      </h4>
+    </div>
+  </div>
+
+  <div className="mt-2 flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md sm:col-span-2">
+    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white">
+      <Users size={26} />
+    </div>
+
+    <div>
+      <h4 className="pt-2 text-lg font-medium leading-snug text-[#111]">
+        Limited in-house compliance expertise
+      </h4>
+    </div>
+  </div>
+</div>
 
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function EngagementProcessSection() {
             Our Engagement Approach
           </span> */}
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
             A Clear, Structured Path to Compliance
           </h2>
 
@@ -31,30 +31,79 @@ export default function EngagementProcessSection() {
         </motion.div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+       {/* Steps */}
+<div className="grid grid-cols-1 gap-6 md:grid-cols-3 max-w-6xl mx-auto">
 
-          <StepCard
-            step="Step 1"
-            title="Free Initial Consultation"
-            icon={<PhoneCall />}
-            description="We understand your business, regulatory exposure, and key compliance challenges."
-          />
+  {/* Step 1 */}
+  <div className="rounded-3xl border border-[#ddd] bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+    
+    <div className="mb-5 flex items-center justify-between">
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
+        <PhoneCall size={26} />
+      </div>
 
-          <StepCard
-            step="Step 2"
-            title="Risk Assessment & Gap Analysis"
-            icon={<SearchCheck />}
-            description="We identify compliance gaps, control weaknesses, and priority risks requiring immediate attention."
-          />
+      <span className="rounded-full bg-[#f4f0fb] px-4 py-2 text-sm font-bold text-[#4f2e80]">
+        Step 1
+      </span>
+    </div>
 
-          <StepCard
-            step="Step 3"
-            title="Implementation & Ongoing Support"
-            icon={<Settings />}
-            description="We help remediate gaps and provide ongoing support to ensure sustained regulatory compliance."
-          />
+    <h3 className="text-xl font-medium leading-tight text-[#111]">
+      Free Initial Consultation
+    </h3>
 
-        </div>
+    <p className="mt-4 text-base leading-relaxed text-[#555]">
+      We understand your business, regulatory exposure, and key compliance
+      challenges.
+    </p>
+  </div>
+
+  {/* Step 2 */}
+  <div className="rounded-3xl border border-[#ddd] bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+    
+    <div className="mb-5 flex items-center justify-between">
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
+        <SearchCheck size={26} />
+      </div>
+
+      <span className="rounded-full bg-[#f4f0fb] px-4 py-2 text-sm font-bold text-[#4f2e80]">
+        Step 2
+      </span>
+    </div>
+
+    <h3 className="text-xl font-medium">
+      Risk Assessment & Gap Analysis
+    </h3>
+
+    <p className="mt-4 text-base leading-relaxed text-[#555]">
+      We identify compliance gaps, control weaknesses, and priority risks
+      requiring immediate attention.
+    </p>
+  </div>
+
+  {/* Step 3 */}
+  <div className="rounded-3xl border border-[#ddd] bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+    
+    <div className="mb-5 flex items-center justify-between">
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
+        <Settings size={26} />
+      </div>
+
+      <span className="rounded-full bg-[#f4f0fb] px-4 py-2 text-sm font-bold text-[#4f2e80]">
+        Step 3
+      </span>
+    </div>
+
+    <h3 className="text-xl font-medium">
+      Implementation & Ongoing Support
+    </h3>
+
+    <p className="mt-4 text-base leading-relaxed text-[#555]">
+      We help remediate gaps and provide ongoing support to ensure sustained
+      regulatory compliance.
+    </p>
+  </div>
+
+</div>
       </div>
     </section>
   );
@@ -82,7 +131,7 @@ function StepCard({ step, title, description, icon }) {
       </div>
 
       {/* Content */}
-      <h3 className="text-xl font-bold text-gray-900 mb-4">
+      <h3 className="text-xl font-medium text-gray-900 mb-4">
         {title}
       </h3>
 

@@ -502,8 +502,8 @@ export default function ReviewsSection() {
   return (
     <section className="py-20 overflow-hidden bg-gray-200">
       <div className="text-center mb-12">
-        <h1 className="text-5xl font-semibold">
-          What Our <span className="font-medium text-[#4f2e80]">Clients Say</span>
+        <h1 className="text-5xl font-bold">
+          What Our <span className="font-bold text-[#4f2e80]">Clients Say</span>
         </h1>
         <p className="text-gray-600 text-lg">
           Trusted by industry leaders

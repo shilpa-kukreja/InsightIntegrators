@@ -27,7 +27,7 @@ export default function TrustSection() {
               Why Choose Us
             </span>
 
-            <h2 className="text-4xl font-extrabold text-gray-800 mb-6 leading-tight">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6 leading-tight">
               Why Businesses Across UAE Trust
               <span className="block text-[#4f2e80] mt-2">
                 Insight Integrators
@@ -40,29 +40,68 @@ export default function TrustSection() {
               theoretical advice.
             </p>
 
-            {/* Trust Points */}
-            <div className="space-y-5">
-              <TrustItem
-                icon={<Landmark />}
-                text="Deep knowledge of UAE regulations"
-              />
-              <TrustItem
-                icon={<ShieldCheck />}
-                text="Strong focus on financial crime prevention"
-              />
-              <TrustItem
-                icon={<Users />}
-                text="Senior professionals lead every engagement"
-              />
-              <TrustItem
-                icon={<FileSearch />}
-                text="Practical remediation, not just audit reports"
-              />
-              <TrustItem
-                icon={<CheckCircle2 />}
-                text="Trusted support during regulatory inspections"
-              />
-            </div>
+          {/* Trust Points */}
+<div className="">
+  <div className=" flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
+      <Landmark size={26} />
+    </div>
+
+    <div>
+      <h4 className="pt-2 text-lg font-medium leading-snug text-[#111]">
+        Deep knowledge of UAE regulations
+      </h4>
+    </div>
+  </div>
+
+  <div className="mt-3 flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
+      <ShieldCheck size={26} />
+    </div>
+
+    <div>
+      <h4 className="pt-2 text-lg font-medium leading-snug text-[#111]">
+        Strong focus on financial crime prevention
+      </h4>
+    </div>
+  </div>
+
+  <div className="mt-3 flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white">
+      <Users size={26} />
+    </div>
+
+    <div>
+      <h4 className="pt-2 text-lg font-medium leading-snug text-[#111]">
+        Senior professionals lead every engagement
+      </h4>
+    </div>
+  </div>
+
+  <div className="mt-3 flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white">
+      <FileSearch size={26} />
+    </div>
+
+    <div>
+      <h4 className="pt-2 text-lg font-medium leading-snug text-[#111]">
+        Practical remediation, not just audit reports
+      </h4>
+    </div>
+  </div>
+
+  <div className="mt-3 flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md sm:col-span-2">
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white">
+      <CheckCircle2 size={26} />
+    </div>
+
+    <div>
+      <h4 className="pt-2 text-lg font-medium leading-snug text-[#111]">
+        Trusted support during regulatory inspections
+      </h4>
+    </div>
+  </div>
+</div>
           </motion.div>
 
           {/* Right Image */}

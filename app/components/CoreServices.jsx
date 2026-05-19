@@ -51,7 +51,7 @@ export default function CoreServicesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="text-4xl font-extrabold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Our Key Services
             </h2>
 
@@ -125,18 +125,29 @@ export default function CoreServicesSection() {
 }
 
 /* Dropdown Wrapper */
+/* Dropdown Wrapper */
 function Dropdown({ title, isOpen, onClick, children }) {
   return (
     <div className="mb-6">
       <button
         onClick={onClick}
-        className="w-full flex items-center justify-between bg-[#4f2e80] text-white px-6 py-4 rounded-xl font-semibold text-lg"
+        className="w-full flex items-center justify-between rounded-3xl bg-[#4f2e80] px-6 py-3 text-left text-white shadow-lg transition-all duration-300 hover:bg-[#43256e]"
       >
-        {title}
-        <ChevronDown
-          className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+        <div>
+          
+          <h3 className="text-xl ">
+            {title}
+          </h3>
+        </div>
+
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
+          <ChevronDown
+            size={24}
+            className={`transition-transform duration-300 ${
+              isOpen ? "rotate-180" : ""
             }`}
-        />
+          />
+        </div>
       </button>
 
       <AnimatePresence>
@@ -146,9 +157,11 @@ function Dropdown({ title, isOpen, onClick, children }) {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="overflow-hidden mt-4 space-y-4"
+            className="mt-5 overflow-hidden"
           >
-            {children}
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              {children}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -159,11 +172,19 @@ function Dropdown({ title, isOpen, onClick, children }) {
 /* Service Item */
 function ServiceItem({ icon, text }) {
   return (
-    <div className="flex items-center gap-4 bg-white border border-[#4f2e80]/30 rounded-xl px-6 py-4 hover:shadow-md transition">
-      <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-blue-100 text-[#4f2e80]">
+    <div className="flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white">
         {icon}
       </div>
-      <p className="text-gray-800 font-medium">{text}</p>
+
+      <div>
+        
+
+        <h4 className="pt-2 text-lg font-medium">
+          {text}
+        </h4>
+      </div>
     </div>
   );
 }

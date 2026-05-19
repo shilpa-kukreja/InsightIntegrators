@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, CalendarDays, ShieldCheck } from "lucide-react";
+import { CheckCircle, CalendarDays, ShieldCheck,CheckCircle2,ShieldAlert,Lightbulb} from "lucide-react";
 
 export default function LeadMagnetSection({ onOpenPopup }) {
   return (
@@ -26,7 +26,7 @@ export default function LeadMagnetSection({ onOpenPopup }) {
           </div> */}
 
           {/* Headline */}
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
             Get a Free Compliance & Risk Health Check
           </h2>
 
@@ -36,12 +36,51 @@ export default function LeadMagnetSection({ onOpenPopup }) {
             on your regulatory position and next steps.
           </p>
 
-          {/* Bullet Points */}
-          <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-10 md:mb-12">
-            <Bullet text="Review your current compliance framework" />
-            <Bullet text="Identify key regulatory risks" />
-            <Bullet text="Provide high-level improvement recommendations" />
-          </div>
+          
+         {/* Bullet Points */}
+<div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 mb-10 md:mb-12">
+
+  <div className="flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
+      <CheckCircle2 size={22} />
+    </div>
+
+    <div>
+     
+      <h4 className="text-lg font-medium leading-snug text-[#111]">
+        Review your current compliance framework
+      </h4>
+    </div>
+  </div>
+
+  <div className="flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
+      <ShieldAlert size={22} />
+    </div>
+
+    <div>
+     
+      <h4 className="text-lg font-medium leading-snug text-[#111]">
+        Identify key regulatory risks
+      </h4>
+    </div>
+  </div>
+
+  <div className="flex items-start gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
+      <Lightbulb size={22} />
+    </div>
+
+    <div>
+     
+
+      <h4 className="text-lg font-medium leading-snug text-[#111]">
+        Provide high-level improvement recommendations
+      </h4>
+    </div>
+  </div>
+
+</div>
 
           {/* CTA */}
           <motion.button

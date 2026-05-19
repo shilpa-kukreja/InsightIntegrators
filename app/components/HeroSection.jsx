@@ -39,12 +39,12 @@ Live Compliance & Tax Risk Workshop          </div>
           </h1>
 
           <p className="mt-4 text-lg font-medium text-[#333] md:text-xl">
-Book Your Free 30-Minute Tax Consultation And Stay Protected From Costly FTA Penalties
+ Book Your Free 30-Minute Tax Consultation And Stay Protected From Costly FTA Penalties
           </p>
         </div>
 
         {/* Main Content */}
-        <div className="mt-18 grid items-center gap-12 lg:grid-cols-2">
+        <div className="mt-25 md:mt-18 grid items-center gap-12 lg:grid-cols-2">
           {/* Left Side */}
           <div className="flex flex-col items-center">
             {/* Image Circle */}
@@ -72,71 +72,87 @@ Book Your Free 30-Minute Tax Consultation And Stay Protected From Costly FTA Pen
           </div>
 
           {/* Right Side */}
-          <div>
-            {/* Info Cards */}
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-              {/* Time */}
-              <div className="flex items-center gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
-                  <Clock3 size={26} />
-                </div>
+      <div>
+  {/* Info Cards */}
+  <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-5">
+    
+    {/* Time */}
+    <div className="flex flex-col items-center text-center gap-3 rounded-3xl border border-[#ddd] bg-white p-4 shadow-md sm:flex-row sm:items-center sm:text-left sm:gap-4 sm:p-5">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white sm:h-12 sm:w-12">
+        <Clock3 size={22} className="sm:w-[26px] sm:h-[26px]" />
+      </div>
 
-                <div>
-                  <p className="text-sm font-medium text-[#555]">Time</p>
-                  <h4 className="text-2xl font-bold">11:00 AM</h4>
-                </div>
-              </div>
+      <div>
+        <p className="text-xs font-medium text-[#555] sm:text-sm">
+          Time
+        </p>
 
-              {/* Date */}
-              <div className="flex items-center gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
-                  <CalendarDays size={26} />
-                </div>
+        <h4 className="text-lg font-medium sm:text-2xl">
+          11:00 AM
+        </h4>
+      </div>
+    </div>
 
-                <div>
-                  <p className="text-sm font-medium text-[#555]">Date</p>
-                  <h4 className="text-2xl font-bold">18th May</h4>
-                </div>
-              </div>
+    {/* Date */}
+    <div className="flex flex-col items-center text-center gap-3 rounded-3xl border border-[#ddd] bg-white p-4 shadow-md sm:flex-row sm:items-center sm:text-left sm:gap-4 sm:p-5">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white sm:h-12 sm:w-12">
+        <CalendarDays size={22} className="sm:w-[26px] sm:h-[26px]" />
+      </div>
 
-              {/* Venue */}
-              <div className="flex items-center gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
-                  <Video size={26} />
-                </div>
+      <div>
+        <p className="text-xs font-medium text-[#555] sm:text-sm">
+          Date
+        </p>
 
-                <div>
-                  <p className="text-sm font-medium text-[#555]">Venue</p>
-                  <h4 className="text-2xl font-bold">Zoom</h4>
-                </div>
-              </div>
+        <h4 className="text-lg font-medium sm:text-2xl">
+          18th May
+        </h4>
+      </div>
+    </div>
 
-              {/* Language */}
-              <div className="flex items-center gap-4 rounded-3xl border border-[#ddd] bg-white p-5 shadow-md">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#4f2e80] text-white">
-                  <Globe size={26} />
-                </div>
+    {/* Venue */}
+    <div className="flex flex-col items-center text-center gap-3 rounded-3xl border border-[#ddd] bg-white p-4 shadow-md sm:flex-row sm:items-center sm:text-left sm:gap-4 sm:p-5">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white sm:h-12 sm:w-12">
+        <Video size={22} className="sm:w-[26px] sm:h-[26px]" />
+      </div>
 
-                <div>
-                  <p className="text-sm font-medium text-[#555]">Language</p>
-                  <h4 className="text-2xl font-bold">English</h4>
-                </div>
-              </div>
-            </div>
+      <div>
+        <p className="text-xs font-medium text-[#555] sm:text-sm">
+          Venue
+        </p>
 
-            {/* CTA Button */}
-            <button
-              onClick={() => setShowPopup(true)}
-              className="mt-10 w-full rounded-3xl bg-[#4f2e80] px-8 py-4 text-2xl font-black text-white shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:bg-[#43256e]"
-            >
-              Book Free Consultation Now 
-            </button>
-            {/* Registration */}
-            {/* <p className="mt-5 text-center text-xl font-semibold italic text-[#222]">
-              Registrations End on{" "}
-              <span className="font-black text-red-500">18 MAY</span>
-            </p> */}
-          </div>
+        <h4 className="text-lg font-medium sm:text-2xl">
+          Zoom
+        </h4>
+      </div>
+    </div>
+
+    {/* Language */}
+    <div className="flex flex-col items-center text-center gap-3 rounded-3xl border border-[#ddd] bg-white p-4 shadow-md sm:flex-row sm:items-center sm:text-left sm:gap-4 sm:p-5">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white sm:h-12 sm:w-12">
+        <Globe size={22} className="sm:w-[26px] sm:h-[26px]" />
+      </div>
+
+      <div>
+        <p className="text-xs font-medium text-[#555] sm:text-sm">
+          Language
+        </p>
+
+        <h4 className="text-lg font-medium sm:text-2xl">
+          English
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  {/* CTA Button */}
+  <button
+    onClick={() => setShowPopup(true)}
+    className="mt-8 w-full rounded-3xl bg-[#4f2e80] px-6 py-4 text-lg font-semibold text-white shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:bg-[#43256e] sm:mt-10 sm:px-8 sm:py-4 sm:text-2xl"
+  >
+    Book Free Consultation Now
+  </button>
+</div>
         </div>
 
         {/* Bottom Stats */}
@@ -144,27 +160,27 @@ Book Your Free 30-Minute Tax Consultation And Stay Protected From Costly FTA Pen
         </div>
 
         {/* Features */}
-        <div className="mt-2 flex flex-wrap items-center justify-center gap-24">
-          {[
-            "500+ VAT Filings",
-            "Zero Client Penalties",
-            "Senior CPAs Only ",
-            "48-Hour Response"
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3 rounded-full bg-white px-5 py-2 shadow-md"
-            >
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#4f2e80] text-white">
-                <Check size={16} />
-              </div>
+        <div className="mt-2 grid grid-cols-2 gap-4 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-10">
+  {[
+    "500+ VAT Filings",
+    "Zero Client Penalties",
+    "Senior CPAs Only",
+    "48-Hour Response",
+  ].map((item, index) => (
+    <div
+      key={index}
+      className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-md sm:rounded-full sm:px-5 sm:py-2"
+    >
+      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#4f2e80] text-white">
+        <Check size={16} />
+      </div>
 
-              <span className="text-base font-semibold text-[#222]">
-                {item}
-              </span>
-            </div>
-          ))}
-        </div>
+      <span className="text-sm font-semibold leading-snug text-[#222] sm:text-base">
+        {item}
+      </span>
+    </div>
+  ))}
+</div>
       </div>
 
 
