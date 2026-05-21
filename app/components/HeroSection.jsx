@@ -3,7 +3,7 @@
 import { useState } from "react";
 import MasterclassPopup from "./MasterclassPopup";
 
-import { CalendarDays, Globe, Video, Clock3, Check } from "lucide-react";
+import { CalendarDays, Globe, Video, Clock3, Check,BriefcaseBusiness,BadgeCheck } from "lucide-react";
 
 export default function HeroSection() {
   const [showPopup, setShowPopup] = useState(false);
@@ -79,16 +79,17 @@ Live Compliance & Tax Risk Workshop          </div>
     {/* Time */}
     <div className="flex flex-col items-center text-center gap-3 rounded-3xl border border-[#ddd] bg-white p-4 shadow-md sm:flex-row sm:items-center sm:text-left sm:gap-4 sm:p-5">
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white sm:h-12 sm:w-12">
-        <Clock3 size={22} className="sm:w-[26px] sm:h-[26px]" />
+        <BriefcaseBusiness  size={22} className="sm:w-[26px] sm:h-[26px]" />
       </div>
 
       <div>
         <p className="text-xs font-medium text-[#555] sm:text-sm">
-          Time
+          Business Focus
         </p>
 
-        <h4 className="text-lg font-medium sm:text-2xl">
-          11:00 AM
+        <h4 className="text-lg font-medium sm:text-[18px]">
+          Growth & Compliance
+
         </h4>
       </div>
     </div>
@@ -96,16 +97,17 @@ Live Compliance & Tax Risk Workshop          </div>
     {/* Date */}
     <div className="flex flex-col items-center text-center gap-3 rounded-3xl border border-[#ddd] bg-white p-4 shadow-md sm:flex-row sm:items-center sm:text-left sm:gap-4 sm:p-5">
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#4f2e80] text-white sm:h-12 sm:w-12">
-        <CalendarDays size={22} className="sm:w-[26px] sm:h-[26px]" />
+        <BadgeCheck size={22} className="sm:w-[26px] sm:h-[26px]" />
       </div>
 
       <div>
         <p className="text-xs font-medium text-[#555] sm:text-sm">
-          Date
+          Consultation Type
+
         </p>
 
-        <h4 className="text-lg font-medium sm:text-2xl">
-          18th May
+        <h4 className="text-lg font-medium sm:text-xl">
+          Strategic Advisory
         </h4>
       </div>
     </div>
