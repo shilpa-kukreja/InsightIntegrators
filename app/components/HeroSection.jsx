@@ -53,7 +53,7 @@ Live Compliance & Tax Risk Workshop          </div>
                 <img
                   src="/image/man.png"
                   alt="Founder"
-                  className=" object-contain grayscale pr-6"
+                  className=" object-contain h-[330px] w-[330px] grayscale pr-6"
                 />
               </div>
 
