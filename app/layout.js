@@ -159,9 +159,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* Google Ads / GTM Script */}
+        {/* Google tag (gtag.js) */}
         <Script
-          async
           src="https://www.googletagmanager.com/gtag/js?id=AW-18100457132"
           strategy="afterInteractive"
         />
