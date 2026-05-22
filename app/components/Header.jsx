@@ -227,7 +227,7 @@ export default function Header() {
                 </a>
               ))} */}
 
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setOpen(true)}
@@ -236,7 +236,7 @@ export default function Header() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                 <Phone size={18} className="relative z-10" />
                 <span className="relative z-10">Free Consultation</span>
-              </motion.button>
+              </motion.button> */}
 
               <motion.a
                 href="https://insight-integrator.vercel.app/"
@@ -309,16 +309,13 @@ export default function Header() {
 
                     {/* Mobile CTA */}
                     <div className="pt-4 border-t border-gray-100">
-                      <button
-                        onClick={() => {
-                          setOpen(true);
-                          setIsMenuOpen(false);
-                        }}
+                      <motion.a
+                       href="https://insight-integrator.vercel.app/"
                         className="w-full bg-[#4f2e80] text-white px-6 py-3 rounded-xl font-semibold text-sm shadow-lg flex items-center justify-center gap-3"
                       >
                         <Phone size={18} />
-                        Free Consultation
-                      </button>
+                        Visit Website
+                      </motion.a>
 
                       {/* Mobile Contact Info */}
                       <div className="mt-6 space-y-3 text-sm text-gray-600">

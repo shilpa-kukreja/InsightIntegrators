@@ -189,8 +189,7 @@ export default function HeroSection() {
       {showPopup && (
         <MasterclassPopup
           onClose={() => setShowPopup(false)}
-          selectedDate="2026-05-18"
-          selectedTime="11:00"
+          
         />
       )}
     </section>

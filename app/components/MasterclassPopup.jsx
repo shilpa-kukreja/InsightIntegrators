@@ -495,7 +495,7 @@ export default function MasterclassPopup({
   const [step, setStep] = useState(1);
 
   const [selectedDateValue, setSelectedDateValue] = useState(
-    selectedDate ? new Date(selectedDate) : new Date(),
+    selectedDate ? new Date(selectedDate) : null,
   );
 
   const [formData, setFormData] = useState({
@@ -698,7 +698,7 @@ export default function MasterclassPopup({
             </p>
 
             {/* Step Indicator */}
-            <div className="mt-6 flex items-center gap-3">
+            {/* <div className="mt-6 flex items-center gap-3">
               <div
                 className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ${
                   step >= 1
@@ -720,11 +720,13 @@ export default function MasterclassPopup({
               >
                 2
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Content */}
-<div className="max-h-[82vh] overflow-y-auto p-5 md:p-7">            {isSubmitted ? (
+          <div className="max-h-[82vh] overflow-y-auto p-5 md:p-7">
+            {" "}
+            {isSubmitted ? (
               <div className="py-16 text-center">
                 <div className="mx-auto mb-5 flex h-24 w-24 items-center justify-center rounded-full bg-green-100">
                   <CheckCircle className="h-12 w-12 text-green-600" />
@@ -816,8 +818,17 @@ export default function MasterclassPopup({
                       <button
                         type="button"
                         disabled={!formData.date || !formData.time}
-                        onClick={() => setStep(2)}
-                        className="mt-5 w-full rounded-2xl bg-[#4f2e80] py-4 font-bold text-white transition-all hover:bg-[#43256e] disabled:opacity-50"
+                        onClick={() => {
+                          if (!formData.date || !formData.time) return;
+
+                          setStep(2);
+                        }}
+                        className={`mt-5 w-full rounded-2xl py-4 font-bold transition-all
+  ${
+    !formData.date || !formData.time
+      ? "cursor-not-allowed bg-gray-300 text-gray-500"
+      : "bg-[#4f2e80] text-white hover:bg-[#43256e]"
+  }`}
                       >
                         Continue
                       </button>
@@ -843,8 +854,9 @@ export default function MasterclassPopup({
                             <Calendar className="h-5 w-5 text-[#4f2e80]" />
 
                             <span className="font-bold text-[#4f2e80]">
-                              {new Date(formData.date).toDateString()} •{" "}
-                              {formData.time}
+                              {formData.date && formData.time
+                                ? `${new Date(formData.date).toDateString()} • ${formData.time}`
+                                : "Please select date & time"}
                             </span>
                           </div>
                         </div>
@@ -861,51 +873,48 @@ export default function MasterclassPopup({
                     </div>
 
                     <div className="grid gap-6 md:grid-cols-2">
-{/* Full Name */}
-                    <div>
-                      <label className="mb-2 block text-sm font-semibold">
-                        Full Name
-                      </label>
+                      {/* Full Name */}
+                      <div>
+                        <label className="mb-2 block text-sm font-semibold">
+                          Full Name
+                        </label>
 
-                      <div className="relative">
-                        <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
+                        <div className="relative">
+                          <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
 
-                        <input
-                          type="text"
-                          name="fullName"
-                          required
-                          value={formData.fullName}
-                          onChange={handleChange}
-                          placeholder="Enter your name"
-                          className="w-full rounded-xl border border-gray-200 bg-gray-50 py-3 pl-11 pr-4 outline-none focus:border-[#4f2e80]"
-                        />
+                          <input
+                            type="text"
+                            name="fullName"
+                            required
+                            value={formData.fullName}
+                            onChange={handleChange}
+                            placeholder="Enter your name"
+                            className="w-full rounded-xl border border-gray-200 bg-gray-50 py-3 pl-11 pr-4 outline-none focus:border-[#4f2e80]"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Company Name */}
+                      <div>
+                        <label className="mb-2 block text-sm font-semibold">
+                          Company Name
+                        </label>
+
+                        <div className="relative">
+                          <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
+
+                          <input
+                            type="text"
+                            name="companyName"
+                            required
+                            value={formData.companyName}
+                            onChange={handleChange}
+                            placeholder="Enter your company name"
+                            className="w-full rounded-xl border border-gray-200 bg-gray-50 py-3 pl-11 pr-4 outline-none focus:border-[#4f2e80]"
+                          />
+                        </div>
                       </div>
                     </div>
-
-                    {/* Company Name */}
-                    <div>
-                      <label className="mb-2 block text-sm font-semibold">
-                        Company Name
-                      </label>
-
-                      <div className="relative">
-                        <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
-
-                        <input
-                          type="text"
-                          name="companyName"
-                          required
-                          value={formData.companyName}
-                          onChange={handleChange}
-                          placeholder="Enter your company name"
-                          className="w-full rounded-xl border border-gray-200 bg-gray-50 py-3 pl-11 pr-4 outline-none focus:border-[#4f2e80]"
-                        />
-                      </div>
-                    </div>
-
-                    </div>
-
-                    
 
                     {/* Email + Phone */}
                     <div className="grid gap-6 md:grid-cols-2">
